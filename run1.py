@@ -150,6 +150,6 @@ for i in range(piece):
     train_temp = train[index_temp]
     label_temp = data.y.values[[index_temp]]
     svm = SVC()
-    svm.fit(train, data['y'].values)
+    svm.fit(train_temp, data['y'].values[index_temp])
     joblib.dump(svm, model_name)
     print 'model:', i, 'finished'
